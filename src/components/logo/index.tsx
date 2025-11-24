@@ -1,10 +1,18 @@
 import { AudioWaveform } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const Logo = () => {
+interface LogoProps {
+  url?: string; // optional
+}
+
+const Logo = ({ url = "/" }: LogoProps) => {
   return (
-    <div className="flex h-6 w-6 items-center justify-center rounded-md bg-primary text-primary-foreground">
+    <Link
+      to={url}
+      className="flex h-6 w-6 items-center justify-center rounded-md bg-primary text-primary-foreground"
+    >
       <AudioWaveform className="size-4" />
-    </div>
+    </Link>
   );
 };
 
